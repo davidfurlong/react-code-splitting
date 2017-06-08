@@ -1,6 +1,10 @@
 import React from 'react'
 
 export default class Async extends React.Component {
+  constructor(){
+    super();
+    this._isMounted = false;
+  }
   componentWillMount = () => {
     this.props.load.then((c) => {
       this.C = c;

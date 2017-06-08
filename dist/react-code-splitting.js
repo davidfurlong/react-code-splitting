@@ -22,27 +22,27 @@ var Async = function (_React$Component) {
   _inherits(Async, _React$Component);
 
   function Async() {
-    var _ref,
-        _this2 = this;
-
-    var _temp, _this, _ret;
+    var _this2 = this;
 
     _classCallCheck(this, Async);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, (Async.__proto__ || Object.getPrototypeOf(Async)).call(this));
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Async.__proto__ || Object.getPrototypeOf(Async)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
+    _this.componentWillMount = function () {
       _this.props.load.then(function (c) {
         _this.C = c;
         if (_this._isMounted) _this.forceUpdate();
       });
-    }, _this.render = function () {
+    };
+
+    _this.render = function () {
       var componentProps = _this.props.componentProps;
 
       return _this.C ? _react2.default.createElement(_this2.C.default, componentProps) : null;
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    };
+
+    _this._isMounted = false;
+    return _this;
   }
 
   _createClass(Async, [{
