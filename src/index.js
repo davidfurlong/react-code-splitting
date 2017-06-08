@@ -19,8 +19,8 @@ export default class Async extends React.Component {
     this._isMounted = false;
   }
 
-  render = () => {
-    const {componentProps} = this.props
-    return this.C ? <this.C.default {...componentProps} /> : null
+  render(){
+    const { componentProps } = this.props
+    return this.C ? (this.C.default ? <this.C.default {...componentProps} /> : <this.C {...componentProps} />)  : null
   }
 }

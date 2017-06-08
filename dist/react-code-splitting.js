@@ -22,8 +22,6 @@ var Async = function (_React$Component) {
   _inherits(Async, _React$Component);
 
   function Async() {
-    var _this2 = this;
-
     _classCallCheck(this, Async);
 
     var _this = _possibleConstructorReturn(this, (Async.__proto__ || Object.getPrototypeOf(Async)).call(this));
@@ -33,12 +31,6 @@ var Async = function (_React$Component) {
         _this.C = c;
         if (_this._isMounted) _this.forceUpdate();
       });
-    };
-
-    _this.render = function () {
-      var componentProps = _this.props.componentProps;
-
-      return _this.C ? _react2.default.createElement(_this2.C.default, componentProps) : null;
     };
 
     _this._isMounted = false;
@@ -54,6 +46,13 @@ var Async = function (_React$Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this._isMounted = false;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var componentProps = this.props.componentProps;
+
+      return this.C ? this.C.default ? _react2.default.createElement(this.C.default, componentProps) : _react2.default.createElement(this.C, componentProps) : null;
     }
   }]);
 
